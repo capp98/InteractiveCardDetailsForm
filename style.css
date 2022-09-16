@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+:root {
+    --linear-gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+
+    --Light-grayish-violet: hsl(270, 3%, 87%);
+    --Dark-grayish-violet: hsl(279, 6%, 55%);
+    --Very-dark-violet: hsl(278, 68%, 11%);
+}
+
+
+@media (min-width: 400px) {
+    .cards-side {
+        background: url('./images/bg-main-desktop.png') no-repeat;
+    }
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: 0;
+    border: none;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+
+    overflow-x: hidden;
+    letter-spacing: 2px;
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+main {
+    /* position: absolute; */
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    overflow-y: auto;
+}
+
+.cards-side {
+    color: #fff;
+    width: 40%;
+
+    min-width: 250px;
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background: url('./images/bg-main-desktop.png') no-repeat;
+}
+
+.form-side {
+    display: flex;
+    width: 40%;
+    justify-content: start;
+    align-items: center;
+}
+
+.card {
+    width: 420px;
+    height: 240px;
+    background-color: #fff;
+
+    font-size: .80rem;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.front img {
+    margin: 20px 25px;
+    width: 60px;
+}
+
+.front div {
+    margin: 20px 25px;
+    height: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.front div :first-child {
+    width: 100%;
+    font-size: 1.7rem;
+}
+
+.front {
+    background: url('./images/bg-card-front.png') no-repeat;
+    background-size: 100% 100%;
+    margin-left: 250px;
+}
+
+.front input {
+    background: transparent;
+    color: #fff;
+    text-align: right;
+    letter-spacing: 2px;
+    width: 50px;
+}
+
+.back {
+    background: url('./images/bg-card-back.png') no-repeat;
+    background-size: 100% 100%;
+    margin-left: 350px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.back p {
+    margin-top: -5px;
+    margin-right: 50px;
+}
+
+form,
+.success {
+    width: 400px;
+    height: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: stretch;
+    position: relative;
+}
+
+.success {
+    height: 250px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--Dark-grayish-violet);
+    font-size: .7em;
+}
+
+.success div :first-child {
+    text-align: center;
+    color: var(--Very-dark-violet);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.success button {
+    width: 80%;
+    padding: 10px;
+    color: #fff;
+    background-color: var(--Very-dark-violet);
+    border-radius: 5px;
+}
+
+label {
+    color: var(--Very-dark-violet);
+    font-size: .7rem;
+    text-transform: uppercase;
+    width: 80%;
+}
+
+label[for="date"],
+label[for="date"]+label {
+    width: 40%;
+}
+
+form input {
+    font-size: 1rem;
+    margin: 5px 0px;
+    border-radius: 6px;
+    padding: 10px 15px;
+    border: 1px solid var(--Light-grayish-violet);
+}
+
+form input:active,
+form input:focus,
+form input:valid {
+    border: 1px solid hsl(278, 94%, 30%);
+}
+
+form label p {
+    opacity: 0;
+}
+
+form label input:invalid ~ p {
+    opacity: 1;
+    text-transform: none;
+    color: hsl(0, 100%, 66%);
+}
+
+form input:invalid {
+    border: 1px solid hsl(0, 100%, 66%);
+}
+
+form ::placeholder {
+    opacity: .3;
+}
+
+#name,
+#number {
+    width: 100%;
+}
+
+[name="date"],
+[name="date"]+input {
+    width: 40%;
+}
+
+#cvc {
+    width: 100%;
+}
+
+[type="submit"] {
+    width: 80%;
+    /* padding: 2.5px; */
+    border-radius: 5px;
+    color: #fff;
+    background-color: var(--Very-dark-violet);
+}
+
+footer {
+    font-size: 0.7rem;
+    padding: 5px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+}
+
+div.success.hidden,
+form.hidden {
+    display: none;
+}
+
+@media (max-width: 1110px) {
+    .form-side {
+        width: 40%;
+    }
+
+    form {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 950px) {
+
+    .form-side {
+        width: 50%;
+        justify-content: center;
+    }
+
+    .card {
+        width: 340px;
+        height: 200px;
+    }
+
+    .front {
+        margin-left: 70px;
+    }
+
+    .back {
+        margin-left: 150px;
+    }
+}
+
+@media (max-width: 765px) {
+    main {
+        flex-direction: column;
+    }
+    
+    .cards-side {
+        background: url(images/bg-main-mobile.png) no-repeat;
+        background-size: 100% 250px;
+        width: 100%;
+        height: 55%;
+        min-height: 300px;
+        min-width: none;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+    }
+
+    .front {
+        margin-top: -96px;
+        margin-left: -100px;
+        z-index: 1;
+        font-size: .7rem;
+    }
+
+    .front p:nth-child(2) {
+        width: 200px;
+        overflow: hidden;
+    }
+
+    .back {
+        margin-left: 70px;
+    }
+
+    .back p {
+        margin-right: 35px;
+    }
+
+    form,
+    .success {
+        height: 350px;
+        padding: 20px 0;
+    }
+
+    .success {
+        justify-content: space-evenly;
+    }
+
+    .form-side {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .card {
+        width: 300px;
+        height: 180px;
+        min-width: none;
+    }
+
+    .front div :first-child {
+        width: 100%;
+        font-size: 1.15rem;
+    }
+
+    label,
+    [type="submit"] {
+        width: 100%;
+    }
+
+    label[for="date"],
+    label[for="date"]+label {
+        width: 50%;
+    }
+
+    footer {
+        position: relative;
+    }
+}

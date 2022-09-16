@@ -1,51 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
+  <link type="text/css" rel="stylesheet" href="normalize.css">
+  <link type="text/css" rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Interactive card details form</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
   </style>
 </head>
+
 <body>
+  <main>
+    <div class="cards-side">
+      <div class="card front">
+        <img src="images/card-logo.svg" alt="Card Logo">
+        <div>
+          <p class="number" data-carddata="0000 0000 0000 0000">0000 0000 0000 0000</p>
 
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
+          <p class="name" data-carddata="Jane Appleseed">
+            Jane Appleseed
+          </p>
+          <p class="date" data-carddata="00/00">0000</p>
+        </div>
+      </div>
+      <div class="card back">
+        <p class="cvc" data-carddata="000">000</p>
+      </div>
+    </div>
+    <div class="form-side">
+      <form name="form">
+        <label for="name">
+          Cardholder Name
+          <input type="text" id="name" placeholder="e.g. Jane Appleseed" required>
+          <p>Invalid name</p>
+        </label>
+        <label for="number">
+          Card Number
+          <input type="text" id="number" pattern="([0-9]{4}\s[0-9]{4}\s[0-9]{4}\s[0-9]{4})"
+            title="Wrong format, numbers only" maxlength="19" placeholder="e.g. 1234 5678 9123 0000" required>
+          <p>Wrong format, numbers only</p>
+        </label>
+        <label for="date">
+          Exp. Date (MM/YY)
+          <input type="text" pattern="[1][0-2]|[0]?[0-9]" title="Wrong format, numbers only" name="date" maxlength="2"
+            placeholder="MM" required>
+          <input type="text" pattern="[0-9]{2}|[0-9]{1}" title="Wrong format, numbers only" name="date" maxlength="2"
+            placeholder="YY" required>
+          <p>Invalid date</p>
+        </label>
+        <label for="cvc">
+          CVC
+          <input type="text" pattern="[0-9]{3}" title="Can't be blank" maxlength="3" id="cvc" placeholder="e.g. 123"
+            required>
+          <p>Can't be blank</p>
+        </label>
+        <button type="submit">Confirm</button>
+      </form>
+      <div class="success hidden">
+        <img src="images/icon-complete.svg" alt="Success icon">
+        <div>
+          <p>THANK YOU!</p>
+          <p>We've added your card details</p>
+        </div>
+        <button name="continue">Continue</button>
+      </div>
+    </div>
+    <footer>
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/capp98" target="_blank">Capp</a>.
+    </footer>
+  </main>
 
-  000
-
-  Cardholder Name
-  e.g. Jane Appleseed
-
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm
 
   <!-- Completed state start -->
 
-  Thank you!
+  <!-- Thank you!
   We've added your card details
-  Continue
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  Continue -->
+
+  <!-- <div class="attribution">
+    
+  </div> -->
+  <script src="./scripts.js"></script>
 </body>
+
 </html>

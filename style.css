@@ -273,6 +273,7 @@ form.hidden {
 @media (max-width: 765px) {
     main {
         flex-direction: column;
+        padding: 0 20px;
     }
     
     .cards-side {

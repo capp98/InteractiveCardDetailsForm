@@ -308,8 +308,10 @@ form.hidden {
 
     form,
     .success {
+        /* width: 80%; */
         height: 350px;
         padding: 20px 0;
+        min-width: 350px;
     }
 
     .success {
